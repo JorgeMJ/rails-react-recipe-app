@@ -1,6 +1,18 @@
-=javascript_pack_tag 'hello_react'
+=javascript_pack_tag 'index'
+
 
 %h1 This is index form Dashboard in haml
+%br
+%div#cosa Up HERE
 %br 
 %p this is a super long paragraph 
+
+#appointments_data{data: @example.to_json} HERE
+
+
+%form{action:"/dashboard/form.json", method:"get"}
+	%label{for:"fname"} First name:
+	%input{type:"text", id:"fname", name:"fname"}
+	%input{type:"submit", value:"Submit"}
+
 
