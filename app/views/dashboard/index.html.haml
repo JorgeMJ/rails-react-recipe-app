@@ -3,16 +3,19 @@
 
 %h1 This is index form Dashboard in haml
 %br
-%div#cosa Up HERE
-%br 
-%p this is a super long paragraph 
+/ %div#cosa Up HERE
+/ %br 
+/ %p.text-lowercase This is a SUPER LONG paragraph
 
-#appointments_data{data: @example.to_json} HERE
+/ #appointments_data{data: @example.to_json} HERE
 
 
-%form{action:"/dashboard/form.json", method:"get"}
-	%label{for:"fname"} First name:
-	%input{type:"text", id:"fname", name:"fname"}
-	%input{type:"submit", value:"Submit"}
+#add_recipe_form
+#get_recipes_form
+
+/ #response{data: @recipes.to_json}
+
+#recipe_list_container{data: @recipes.to_json}
+	= render partial: "recipe_list"
 
 
