@@ -9,13 +9,13 @@
 
 / #appointments_data{data: @example.to_json} HERE
 
-#app_container
-	#add_recipe_form
-	#get_recipes_form
+/ #app_container
+#add_recipe_form
+#get_recipes_form
 
-	/ #response{data: @recipes.to_json}
+/ #response{data: @recipes.to_json}
 
-	#recipe_list_container{data: @recipes.to_json}
-		= render partial: "recipe_list"
+#recipe_list_container{data: @recipes.to_json}
+	= render partial: "recipe_list"
 
 

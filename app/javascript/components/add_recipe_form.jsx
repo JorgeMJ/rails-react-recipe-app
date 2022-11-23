@@ -42,8 +42,7 @@ const AddRecipeForm = () => {
 			</span>
 			
 			
-			<input type="submit" value="Add Recipe" />
-			
+			<input type="submit" value="Add Recipe" />			
 		</form>
 	)
 }

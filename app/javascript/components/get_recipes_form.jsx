@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
+import RecipeList from './recipe_list';
+
 
 const GetRecipesForm = () => {
 
-	const [recipeList, setRecipeList] = useState(null);
+	const [recipeList, setRecipeList] = useState();
 
 
-	const formSubmitted = (event) => {
+	const formSubmitted = (event) => { //wrap this ina useCallback hook?
 		event.preventDefault();
 
 		$.ajax({
@@ -19,13 +21,13 @@ const GetRecipesForm = () => {
 			// console.log('response', response)
 
 			setRecipeList(response);
-
+			// console.log('recipeList', recipeList)
 			// $('#recipe_list').html(`<div>${response[0].name}</div>`)
 		});
 	}
 
 	return(
-		// <RecipeContext.Provider value={recipeList}>
+		<>
 			<form onSubmit={formSubmitted}>
 				<fieldset>
 					<legend> Choose Type</legend>
@@ -55,11 +57,11 @@ const GetRecipesForm = () => {
 					<input type="number" id="num_recipes" name="num_recipes" min="1" max="7" />
 				</span>
 				
-				{/*<input type="submit" value="Get Recipes" />*/}
 				<button type="submit">Get Recipes</button>
-				
 			</form>
-		// </RecipeContext.Provider>
+
+			<RecipeList recipes={recipeList}/>
+		</>
 	)
 }
 
