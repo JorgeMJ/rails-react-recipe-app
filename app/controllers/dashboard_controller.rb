@@ -23,13 +23,16 @@ class DashboardController < ApplicationController
   def get_recipes
     options = params.permit(:num_recipes, :kind => [])
 
+    options["kind"] = ['all']
+    options["num_recipes"] = '1'
     if options["kind"].include?("all")
       @recipes = Recipe.all.sample(options[:num_recipes].to_i)
     else
       @recipes = Recipe.where(kind: options[:kind]).sample(options[:num_recipes].to_i)  
     end
 
-    render 'index'
+    # render 'index'
+    render json: @recipes
 
   end
 

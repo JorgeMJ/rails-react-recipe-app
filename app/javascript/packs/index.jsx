@@ -5,6 +5,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+
+import Base from '../components/base'
 import MyComponent from '../components/my_component'
 import AddRecipeForm from '../components/add_recipe_form'
 import GetRecipesForm from '../components/get_recipes_form'

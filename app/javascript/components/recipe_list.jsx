@@ -1,26 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const RecipeList = ({recipes}) => {
+const RecipeList = () => {
 	
-	const recipeList = recipes?.map((recipe, idx) => {
-		return <div key={idx}>
-			<p>Name: {recipe.name}</p>
-			<p>Kind: {recipe.kind}</p>
-			<p>Time:{recipe.time}</p>
-			<p>Ingredients: {recipe.ingredients}</p>
-			<p>Description: {recipe.description}</p>
-			<hr></hr>
-		</div>
-	})
+	// const recipes = React.useContext(RecipeContext);
 
-	console.log('recipeList', recipeList)
+	const myrecipeList = (recipes) => {
+		recipes?.map((recipe, idx) => {
+			return <div key={idx}>
+				<p>Name: {recipe.name}</p>
+				<p>Kind: {recipe.kind}</p>
+				<p>Time:{recipe.time}</p>
+				<p>Ingredients: {recipe.ingredients}</p>
+				<p>Description: {recipe.description}</p>
+				<hr></hr>
+			</div>
+		})
+	}
+	
+
+	// console.log('recipeList', recipeList)
 
 	return(
-		<>
-			<h4>Recipe list</h4>
-			{recipeList || 'No recipes'}
-		</>
+		// <RecipeContext.Consumer>
+			<>
+				<h4>Recipe list</h4>
+				{/*{value => myrecipeList(recipeList) || 'No recipes'}*/}
+				{/*{myrecipeList || 'No recipes'}*/}
+			</>
+		// </RecipeContext.Consumer>
 	)
 }
 
