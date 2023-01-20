@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 const RecipeList = ({recipes}) => {
 
 	const recipeList = recipes?.map((recipe, idx) => {
@@ -15,8 +16,6 @@ const RecipeList = ({recipes}) => {
 	})
 	
 
-	// console.log('recipeList', recipeList)
-
 	return(
 		<>
 			<h4>Recipe list</h4>
@@ -24,16 +23,5 @@ const RecipeList = ({recipes}) => {
 		</>
 	)
 }
-
-// $(document).ready(() => {
-
-// 	const node = $('#recipe_list_container');
-// 	const data = JSON.parse(node.attr('data'));
-
-// 	ReactDOM.render(
-// 		<RecipeList recipes={data}/>,
-// 		document.getElementById('recipe_list').appendChild(document.createElement('div')),	
-// 	)
-// })
 
 export default RecipeList;
