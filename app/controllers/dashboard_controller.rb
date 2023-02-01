@@ -29,6 +29,45 @@ class DashboardController < ApplicationController
     render json: @recipes
   end
 
+  
+  def add_sample_recipes
+    path = "#{Rails.root}/app/assets/data/sample_recipes.yml"
+    file = YAML.load(ERB.new(File.read(path)).result)
+
+    recipes = file[:recipes].values
+
+
+    # To skip duplicate rows, see ActiveRecord::Persistence#insert_all. 
+    # insert_all!: https://apidock.com/rails/v6.0.0/ActiveRecord/Persistence/ClassMethods/insert_all%21
+    #insert_all: https://apidock.com/rails/v6.0.0/ActiveRecord/Persistence/ClassMethods/insert_all
+    # *check optional attributes for unique records*
+
+    #insert_all does not support automatic created_at & updated_at creation. It needs to
+    # explicitly be passed for  each record (How do you do it before Rails 6??) 
+
+    # use insert_all because we can use unique_by (let say name?).THis avoid duplicates. Thrn we can Add to the yml
+    #file a yml.erb and pass created_At and upadated_at and parse ruby Time.now
+
+
+    begin
+      # Recipe.insert_all(recipes, unique_by: :name)
+      Recipe.insert_all(recipes)
+      head :no_content
+    rescue
+      puts '**Error => sample recipes couldn\'t be added.' 
+    end
+  end
+
+  def delete_sample_recipes
+    begin
+      Recipe.where(sample: true).destroy_all
+      head :no_content
+    rescue
+      puts '**Error => sample recipes couldn\'t be deleted.' 
+    end
+
+  end
+
 
   private
 

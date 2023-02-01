@@ -1,0 +1,80 @@
+
+
+:recipes:
+
+  recipe1: 
+    name: Example1
+    kind: kind1
+    time: 60
+    ingredients: This is the list of ingredients
+    description: This is the description for the preparation of the recipe
+    created_at: <%= Time.now %>
+    updated_at: <%= Time.now %>
+    sample: true
+
+  recipe2: 
+    name: Example2
+    kind: kind1
+    time: 60
+    ingredients: This is the list of ingredients
+    description: This is the description for the preparation of the recipe
+    created_at: <%= Time.now %>
+    updated_at: <%= Time.now %>
+    sample: true
+
+  # recipe3: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:
+
+  # recipe4: 
+  #   name: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:
+
+  # recipe5: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:
+
+  # recipe6: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:
+
+  # recipe7: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:
+
+  # recipe8: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:
+
+  # recipe9: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:
+
+  # recipe10: 
+  #   name: 
+  #   kind: 
+  #   time:
+  #   ingredients:
+  #   description:

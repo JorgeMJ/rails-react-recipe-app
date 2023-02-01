@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get 'dashboard/add_recipe'
   get 'dashboard/get_recipes'
+  get '/dashboard/add_sample_recipes'
+  delete '/dashboard/delete_sample_recipes'
 end

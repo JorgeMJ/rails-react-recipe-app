@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem "haml-rails", "~> 2.0"
 
+gem 'yaml'
+
 gem "html2haml"
 
 group :development, :test do
