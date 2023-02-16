@@ -1,21 +1,12 @@
 =javascript_pack_tag 'index'
 
 
+#flash_message
 %h1 This is index form Dashboard in haml
 %br
-/ %div#cosa Up HERE
-/ %br 
-/ %p.text-lowercase This is a SUPER LONG paragraph
-
-/ #appointments_data{data: @example.to_json} HERE
-
-/ #app_container
 #sample_recipes_form
 #add_recipe_form
 #get_recipes_form
-
-/ #response{data: @recipes.to_json}
-
 #recipe_list_container{data: @recipes.to_json}
 	= render partial: "recipe_list"
 

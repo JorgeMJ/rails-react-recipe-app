@@ -11,7 +11,7 @@ import AddRecipeForm from '../components/add_recipe_form'
 import GetRecipesForm from '../components/get_recipes_form'
 import RecipeList from '../components/recipe_list'
 import SampleRecipesForm from '../components/sample_recipes_form'
-import CustomButton from '../components/custom_button'
+import FlashMessage from '../components/flash_message'
 
 /*It is necessary to import in this file all the componenets that I am going to use in my app regadless of if they are
 * are children of Hello components, becasue packs are the entry point for React. The packs components are the

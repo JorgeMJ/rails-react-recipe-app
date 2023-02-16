@@ -11,7 +11,11 @@ class DashboardController < ApplicationController
 
   def add_recipe    
     @recipe = Recipe.new(recipe_params)
-    @recipe.save
+    if @recipe.save
+      flash.notice = 'saved'
+    else
+      flash.alert = 'not saved'
+    end
 
     redirect_back(fallback_location: root_path)
   end
@@ -37,35 +41,28 @@ class DashboardController < ApplicationController
     recipes = file[:recipes].values
 
 
-    # To skip duplicate rows, see ActiveRecord::Persistence#insert_all. 
-    # insert_all!: https://apidock.com/rails/v6.0.0/ActiveRecord/Persistence/ClassMethods/insert_all%21
-    #insert_all: https://apidock.com/rails/v6.0.0/ActiveRecord/Persistence/ClassMethods/insert_all
-    # *check optional attributes for unique records*
-
-    #insert_all does not support automatic created_at & updated_at creation. It needs to
-    # explicitly be passed for  each record (How do you do it before Rails 6??) 
-
-    # use insert_all because we can use unique_by (let say name?).THis avoid duplicates. Thrn we can Add to the yml
-    #file a yml.erb and pass created_At and upadated_at and parse ruby Time.now
-
-
+    ##### ADD TOTAL COUNT OF RECIPES. THIS CAN BE A GOOD CASE TO USE React 'REDUX' ######
+    # becasue we are sending a prop modification from a child component to the top
+    # to modify instantly the total number of recipes in the database
     begin
-      # Recipe.insert_all(recipes, unique_by: :name)
-      Recipe.insert_all(recipes)
-      head :no_content
-    rescue
-      puts '**Error => sample recipes couldn\'t be added.' 
+      #Recipe.insert_all(recipes).valid?
+      Recipe.create!(recipes)
+      message = "Success. Sample Recipes added."
+    rescue ActiveRecord::RecordInvalid
+      message = 'Sample Recipes have already been added.'
     end
+
+    render json: {message: message}
   end
 
   def delete_sample_recipes
     begin
       Recipe.where(sample: true).destroy_all
-      head :no_content
+      message = 'Success. Sample Recipes deleted.'
     rescue
-      puts '**Error => sample recipes couldn\'t be deleted.' 
+      message = '**Error => sample recipes couldn\'t be deleted.' 
     end
-
+    render json: {message: message}
   end
 
 

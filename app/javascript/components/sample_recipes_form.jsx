@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
 
 import CustomButton from './custom_button';
 
+// const FlashContext = createContext();
+
 
 const SampleRecipesForm = () => {
+	// const FlashContext = createContext();
 
 	return(
 		<>

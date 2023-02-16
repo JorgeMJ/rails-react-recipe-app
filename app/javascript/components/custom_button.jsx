@@ -1,9 +1,11 @@
-import React, {} from 'react';
+import React, {useState,createContext} from 'react';
 import ReactDOM from 'react-dom';
 
+const FlashContext = createContext();
 
 const CustomButton = ({type, action, text}) => {
 
+	const [msn, setMsn] = useState(null)
 
 	const buttonAction = (action, event) => {
 		event.preventDefault();
@@ -14,11 +16,9 @@ const CustomButton = ({type, action, text}) => {
 		if (action === 'add') {
 			url = '/dashboard/add_sample_recipes';
 			method = 'GET';
-			console.log('ADDED');
 		} else if (action === 'delete') {
 			url = '/dashboard/delete_sample_recipes';
 			method = 'DELETE';
-			console.log('DELETED');
 		}
 
 		$.ajax({
@@ -26,18 +26,18 @@ const CustomButton = ({type, action, text}) => {
 			method: method,
 			dataType: 'JSON',
 			contentType: 'applicaiton/json',
-
 		}).then((response) => {
-			console.log('everything was OK')
-		}).catch((error) => {
-			console.log('Error => ', error)
+			setMsn(response.message)
+		// }).catch((error) => {
+		// 	console.log('Error => ', error)
 		});
 	}
 
 	return (
-		<>
+
+		<FlashContext.Provider value={msn}>
 			<button type={type} onClick={(e) => {buttonAction(action, e)}}>{text}</button>
-		</>
+		</FlashContext.Provider>
 		
 	)
 }
