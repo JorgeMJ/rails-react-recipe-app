@@ -4,12 +4,12 @@ import ReactDOM from 'react-dom';
 import CustomButton from './custom_button';
 
 
-const SampleRecipesForm = ({flashMessageFn}) => {
+const SampleRecipesForm = () => {
 
 	return(
 		<>
-			<CustomButton type="button" action="add" label="Add Sample Recipes" flashMessageFn={flashMessageFn}/>
-			<CustomButton type="button" action="delete" label="Delete Sample Recipes"flashMessageFn={flashMessageFn}/>
+			<CustomButton type="button" action="add" label="Add Sample Recipes" />
+			<CustomButton type="button" action="delete" label="Delete Sample Recipes" />
 		</>
 	)
 

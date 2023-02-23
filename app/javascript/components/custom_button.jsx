@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ReactDOM from 'react-dom';
 
+import {FlashMessageContextFn} from './contexts';
 
-const CustomButton = ({type, action, label, flashMessageFn}) => {
+const CustomButton = ({type, action, label}) => {
+
+	const flashMessageFn = useContext(FlashMessageContextFn)
 
 	const buttonAction = (action, event) => {
 		event.preventDefault();

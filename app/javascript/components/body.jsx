@@ -6,11 +6,11 @@ import AddRecipeForm from './add_recipe_form'
 import GetRecipesForm from './get_recipes_form'
 
 
-const Body = ({flashMessageFn}) => {
+const Body = () => {
 
 	return(
 		<>
-			<SampleRecipesForm flashMessageFn={flashMessageFn}/>
+			<SampleRecipesForm />
 			<br /><br />
 			<AddRecipeForm />
 			<br /><br />

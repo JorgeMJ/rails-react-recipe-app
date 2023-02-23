@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ReactDOM from 'react-dom';
 
+import {FlashMessageContext} from './contexts';
 
-const FlashMessage = ({flashMessage}) => {
+
+const FlashMessage = () => {
+
+	const flashMessage = useContext(FlashMessageContext);
 
 	return(
 	  <p>{flashMessage}</p>

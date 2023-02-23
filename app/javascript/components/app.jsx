@@ -4,18 +4,24 @@ import ReactDOM from 'react-dom';
 import Header from './header'
 import Body from './body'
 import Footer from './footer'
+import {FlashMessageContext} from './contexts';
+import {FlashMessageContextFn} from './contexts';
+
 
 const App = () => {
 
 	const [flashMessage, setFlashMessage] = useState(null);
-	const showFlashMessage = (text) => { setFlashMessage(text) };
+	const flashMessageFn = (text) => { setFlashMessage(text) };
+	
 
 	return (
-		<>
-			<Header flashMessage={flashMessage}/>
-			<Body flashMessageFn={showFlashMessage}/>
-			<Footer />
-		</>
+		<FlashMessageContext.Provider value={flashMessage}>
+			<FlashMessageContextFn.Provider value={flashMessageFn}>
+				<Header />
+				<Body />
+				<Footer />
+			</FlashMessageContextFn.Provider>
+		</FlashMessageContext.Provider>
 	)
 }
 
