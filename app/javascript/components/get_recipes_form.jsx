@@ -84,11 +84,11 @@ const GetRecipesForm = () => {
 	)
 }
 
-$(document).ready(() => {
-	ReactDOM.render(
-		<GetRecipesForm />,
-		document.getElementById('get_recipes_form').appendChild(document.createElement('div'))
-	)
-})
+// $(document).ready(() => {
+// 	ReactDOM.render(
+// 		<GetRecipesForm />,
+// 		document.getElementById('get_recipes_form').appendChild(document.createElement('div'))
+// 	)
+// })
 
 export default GetRecipesForm;

@@ -1,11 +1,8 @@
-import React, {useState,createContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-const FlashContext = createContext();
 
-const CustomButton = ({type, action, text}) => {
-
-	const [msn, setMsn] = useState(null)
+const CustomButton = ({type, action, label, flashMessageFn}) => {
 
 	const buttonAction = (action, event) => {
 		event.preventDefault();
@@ -27,18 +24,12 @@ const CustomButton = ({type, action, text}) => {
 			dataType: 'JSON',
 			contentType: 'applicaiton/json',
 		}).then((response) => {
-			setMsn(response.message)
-		// }).catch((error) => {
-		// 	console.log('Error => ', error)
+			flashMessageFn(response.message)
 		});
 	}
 
 	return (
-
-		<FlashContext.Provider value={msn}>
-			<button type={type} onClick={(e) => {buttonAction(action, e)}}>{text}</button>
-		</FlashContext.Provider>
-		
+		<button type={type} onClick={(e) => {buttonAction(action, e)}}>{label}</button>
 	)
 }
 

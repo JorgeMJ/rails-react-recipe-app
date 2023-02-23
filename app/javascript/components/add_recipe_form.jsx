@@ -47,13 +47,13 @@ const AddRecipeForm = () => {
 	)
 }
 
-$(document).ready( () => {
+// $(document).ready( () => {
 
-	ReactDOM.render(
-	  <AddRecipeForm />,
-	  document.getElementById('add_recipe_form').appendChild(document.createElement('div')),
-	)
-})
+// 	ReactDOM.render(
+// 	  <AddRecipeForm />,
+// 	  document.getElementById('add_recipe_form').appendChild(document.createElement('div')),
+// 	)
+// })
 
 
 
