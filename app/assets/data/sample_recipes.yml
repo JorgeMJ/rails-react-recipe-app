@@ -4,7 +4,7 @@
 
   recipe1: 
     name: Example1
-    kind: kind1
+    kind: soup
     time: 60
     ingredients: This is the list of ingredients
     description: This is the description for the preparation of the recipe
@@ -14,7 +14,7 @@
 
   recipe2: 
     name: Example2
-    kind: kind1
+    kind: salad
     time: 60
     ingredients: This is the list of ingredients
     description: This is the description for the preparation of the recipe
@@ -22,41 +22,55 @@
     updated_at: <%= Time.now %>
     sample: true
 
-  # recipe3: 
-  #   name: 
-  #   kind: 
-  #   time:
-  #   ingredients:
-  #   description:
+  recipe3: 
+    name: Example3
+    kind: salad
+    time: 60
+    ingredients: This is the list of ingredients
+    description: This is the description for the preparation of the recipe
+    created_at: <%= Time.now %>
+    updated_at: <%= Time.now %>
+    sample: true
 
-  # recipe4: 
-  #   name: 
-  #   name: 
-  #   kind: 
-  #   time:
-  #   ingredients:
-  #   description:
+  recipe4: 
+    name: Example4
+    kind: pasta
+    time: 60
+    ingredients: This is the list of ingredients
+    description: This is the description for the preparation of the recipe
+    created_at: <%= Time.now %>
+    updated_at: <%= Time.now %>
+    sample: true
 
-  # recipe5: 
-  #   name: 
-  #   kind: 
-  #   time:
-  #   ingredients:
-  #   description:
+  recipe5: 
+    name: Example5
+    kind: rice
+    time: 60
+    ingredients: This is the list of ingredients
+    description: This is the description for the preparation of the recipe
+    created_at: <%= Time.now %>
+    updated_at: <%= Time.now %>
+    sample: true
 
-  # recipe6: 
-  #   name: 
-  #   kind: 
-  #   time:
-  #   ingredients:
-  #   description:
+  recipe6: 
+    name: Example6
+    kind: fish
+    time: 60
+    ingredients: This is the list of ingredients
+    description: This is the description for the preparation of the recipe
+    created_at: <%= Time.now %>
+    updated_at: <%= Time.now %>
+    sample: true
 
-  # recipe7: 
-  #   name: 
-  #   kind: 
-  #   time:
-  #   ingredients:
-  #   description:
+  recipe7: 
+    name: Example7
+    kind: salad
+    time: 60
+    ingredients: This is the list of ingredients
+    description: This is the description for the preparation of the recipe
+    created_at: <%= Time.now %>
+    updated_at: <%= Time.now %>
+    sample: true
 
   # recipe8: 
   #   name: 

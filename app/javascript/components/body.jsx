@@ -11,10 +11,13 @@ const Body = () => {
 	return(
 		<>
 			<SampleRecipesForm />
-			<br /><br />
-			<AddRecipeForm />
-			<br /><br />
-			<GetRecipesForm />
+			<div id='forms_container'>
+			 	<br /><br />
+				<GetRecipesForm />
+				<br /><br />
+				<AddRecipeForm />				
+			</div>	
+
 		</>
 	)	
 }

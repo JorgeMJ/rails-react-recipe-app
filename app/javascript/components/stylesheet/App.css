@@ -1,0 +1,143 @@
+* {
+	font-family: Arial;
+}
+
+#header, #footer {
+	background-color: mediumvioletred;
+}
+
+#header {
+	margin:	0;
+	
+	text-align: left;
+}
+
+#header h1 {
+	padding:12px 0 12px 12px; 
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#flash_message {
+	background-color: #ffcc00;
+	text-align: center;
+	margin: 0;
+/*  padding: 10px;*/
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+#sample_recipes {
+	margin: 12px;
+	text-align: right;
+}
+
+#forms_container {
+/*	border: 1px solid rebeccapurple;*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 5px;
+}
+
+#get_recipes_form {
+/*	background-color: lightgreen;*/
+	flex-grow: 2;
+	padding: 10px;
+}
+
+#get_recipes_form fieldset {
+	border: none;
+	border-radius: 5px;
+	background-color: lightgreen;
+}
+
+#get_recipes_form fieldset div {
+	margin-bottom: 5px !important;
+}
+
+
+#get_recipes_form #recipe_list_header {
+	border-bottom: 1px solid green;
+}
+
+#recipe_list .recipe_top {
+	color: darkgreen;
+	display: flex;
+	justify-content: space-between;
+}
+
+#recipe_list .recipe_name {
+	background-color: lightcoral;
+	width: 40%;
+	min-width: 100px;
+	padding: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+#recipe_list .recipe_bottom {
+	display: none;
+}
+	
+
+#add_recipe_form {
+	flex-grow: 1;
+}
+
+#add_recipe_form form {
+	background-color: lightblue;
+	color: blue;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#add_recipe_form form legend h3,
+#get_recipes_form form legend h3 {
+	text-align: center;
+	border-bottom: 1px solid blue;
+/*	padding: 5px;*/
+}
+
+#get_recipes_form form fieldset {
+	text-align: center;
+}
+
+#get_recipes_form form fieldset button[type="submit"] {
+	width: 20%;
+	height: 40px;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+#add_recipe_form form div {
+	align-self: stretch;
+	margin: 10px 0;
+}
+
+#add_recipe_form form div label {
+	width: 100px;
+	display: inline-block;
+/*	border: 2px solid blue;*/
+}
+
+#add_recipe_form form div input,
+#add_recipe_form form div select,
+#add_recipe_form form div textarea {
+	width: 98%;
+	display: inline-block;
+/*	border: 2px solid red;*/
+}
+
+#add_recipe_form form input[type="submit"] {
+	width: 100%;
+	height: 40px;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
+#ingredients,
+#description {
+	height: 100px;
+}

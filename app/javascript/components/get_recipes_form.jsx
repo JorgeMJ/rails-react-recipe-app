@@ -45,42 +45,47 @@ const GetRecipesForm = () => {
 
 
 	return(
-		<>
+		<div id='get_recipes_form'>
 			<form onSubmit={formSubmitted}>
+				<legend><h3>Get Gecipes</h3></legend>
 				<fieldset>
-					<legend> Choose Type</legend>
-					<label htmlFor="all" checked='checked'>All</label>
-					<input type="checkbox"  name="kind[]" value="all" onChange={handleRecipeKind} />
-					<label htmlFor="soup">Soup</label>
-					<input type="checkbox"  name="kind[]" value="soup" onChange={handleRecipeKind} />
-					<label htmlFor="salad">Salad</label>
-					<input type="checkbox"  name="kind[]" value="salad" onChange={handleRecipeKind} />
-					<label htmlFor="meat">Meat</label>
-					<input type="checkbox"  name="kind[]" value="meat" onChange={handleRecipeKind} />
-					<label htmlFor="fish">Fish</label>
-					<input type="checkbox"  name="kind[]" value="fish" onChange={handleRecipeKind} />
-					<label htmlFor="legumes">Legumes</label>
-					<input type="checkbox"  name="kind[]" value="legumes" onChange={handleRecipeKind} />
-					<label htmlFor="rice">Rice</label>
-					<input type="checkbox"  name="kind[]" value="rice" onChange={handleRecipeKind} />
-					<label htmlFor="pasta">Pasta</label>
-					<input type="checkbox" name="kind[]" value="pasta" onChange={handleRecipeKind} />
-					<label htmlFor="vegetables">Vegetables</label>
-					<input type="checkbox"  name="kind[]" value="vegetables" onChange={handleRecipeKind} />
-					<label htmlFor="dessert">Dessert</label>
-					<input type="checkbox"  name="kind[]" value="dessert" onChange={handleRecipeKind} />
-				</fieldset>
-				<span>
-					<label htmlFor="num_recipes"> Number of Recipes </label>
-					<input type="number" id="num_recipes" name="num_recipes" min="1" max="7"
-					 value={numRecipesValue} onChange={handleNumRecipes}/>
-				</span>
+					<div>
+						<label htmlFor="all" checked='checked'>All</label>
+						<input type="checkbox"  name="kind[]" value="all" onChange={handleRecipeKind} />
+						<label htmlFor="soup">&nbsp;Soup</label>
+						<input type="checkbox"  name="kind[]" value="soup" onChange={handleRecipeKind} />
+						<label htmlFor="salad">&nbsp;Salad</label>
+						<input type="checkbox"  name="kind[]" value="salad" onChange={handleRecipeKind} />
+						<label htmlFor="meat">&nbsp;Meat</label>
+						<input type="checkbox"  name="kind[]" value="meat" onChange={handleRecipeKind} />
+						<label htmlFor="fish">&nbsp;Fish</label>
+						<input type="checkbox"  name="kind[]" value="fish" onChange={handleRecipeKind} />
+						<label htmlFor="legumes">&nbsp;Legumes</label>
+						<input type="checkbox"  name="kind[]" value="legumes" onChange={handleRecipeKind} />
+						<label htmlFor="rice">&nbsp;Rice</label>
+						<input type="checkbox"  name="kind[]" value="rice" onChange={handleRecipeKind} />
+						<label htmlFor="pasta">&nbsp;Pasta</label>
+						<input type="checkbox" name="kind[]" value="pasta" onChange={handleRecipeKind} />
+						<label htmlFor="vegetables">&nbsp;Vegetables</label>
+						<input type="checkbox"  name="kind[]" value="vegetables" onChange={handleRecipeKind} />
+						<label htmlFor="dessert">&nbsp;Dessert</label>
+						<input type="checkbox"  name="kind[]" value="dessert" onChange={handleRecipeKind} />
+				{/*</fieldset>*/}
+				{/*<fieldset>*/}
+					<div>
+					</div>
+						<label htmlFor="num_recipes"> Number of Recipes </label>
+						<input type="number" id="num_recipes" name="num_recipes" min="1" max="7"
+						 value={numRecipesValue} onChange={handleNumRecipes}/>
+					</div>
+				{/*</fieldset>*/}
 				
-				<button type="submit">Get Recipes</button>
+					<button type="submit">Get Recipes</button>
+				</fieldset>
 			</form>
 
 			<RecipeList recipes={recipeList}/>
-		</>
+		</div>
 	)
 }
 

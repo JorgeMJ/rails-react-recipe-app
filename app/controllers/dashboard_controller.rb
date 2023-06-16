@@ -23,7 +23,7 @@ class DashboardController < ApplicationController
 
   def get_recipes
     options = params.permit(:num_recipes, :kind => [])
-
+    puts "TRUE?", options[:num_recipes].to_i
     if options["kind"].include?("all")
       @recipes = Recipe.all.sample(options[:num_recipes].to_i)
     else

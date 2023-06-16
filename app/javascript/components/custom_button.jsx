@@ -31,6 +31,7 @@ const CustomButton = ({type, action, label}) => {
 		});
 	}
 
+
 	return (
 		<button type={type} onClick={(e) => {buttonAction(action, e)}}>{label}</button>
 	)
