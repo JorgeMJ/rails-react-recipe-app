@@ -8,21 +8,27 @@
 
 #header {
 	margin:	0;
-	
 	text-align: left;
+	display: flex;
+	justify-content: space-between;
 }
 
 #header h1 {
 	padding:12px 0 12px 12px; 
 	margin-top: 0;
 	margin-bottom: 0;
+
+}
+
+#header .button_container {
+	padding: 5px;
+	vertical-align: center;
 }
 
 #flash_message {
 	background-color: #ffcc00;
 	text-align: center;
 	margin: 0;
-/*  padding: 10px;*/
   position: absolute;
   top: 0px;
   width: 100%;
@@ -34,7 +40,6 @@
 }
 
 #forms_container {
-/*	border: 1px solid rebeccapurple;*/
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -140,4 +145,9 @@
 #ingredients,
 #description {
 	height: 100px;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
 }

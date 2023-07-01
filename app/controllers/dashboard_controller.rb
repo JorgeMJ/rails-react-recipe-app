@@ -1,11 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
-    # @This method is empty becasue Rails automatically renders the view with the same name as the method
-    #(in this case, index). Since we are showing all the actions (add and get recipes) in the same page
-    # (index), we have to render in each method that we use in this page (such as get_recipes) to 'index'.
-    # Also, if we declare instance variables in a method (for example in get_recipes we declare @recipes),
-    # that method will also be avaiable in index.html
+
   end
 
 
@@ -23,14 +19,20 @@ class DashboardController < ApplicationController
 
   def get_recipes
     options = params.permit(:num_recipes, :kind => [])
-    puts "TRUE?", options[:num_recipes].to_i
-    if options["kind"].include?("all")
-      @recipes = Recipe.all.sample(options[:num_recipes].to_i)
-    else
-      @recipes = Recipe.where(kind: options[:kind]).sample(options[:num_recipes].to_i)  
-    end
+    begin    
+      if options["kind"].include?("all")
+        @recipes = Recipe.all.sample(options[:num_recipes].to_i)
+      else
+        @recipes = Recipe.where(kind: options[:kind]).sample(options[:num_recipes].to_i)  
+      end
+    rescue NoMethodError => e
+      puts e
 
-    render json: @recipes
+      @recipes = {error: 'Error'}
+    ensure
+      puts '@recipes', @recipes
+      render json: @recipes
+    end
   end
 
   

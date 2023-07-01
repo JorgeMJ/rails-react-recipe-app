@@ -7,10 +7,10 @@ import CustomButton from './custom_button';
 const SampleRecipesForm = () => {
 
 	return(
-		<div id="sample_recipes">
+		<span id="sample_recipes">
 			<CustomButton type="button" action="add" label="Add Sample Recipes" />
 			<CustomButton type="button" action="delete" label="Delete Sample Recipes" />
-		</div>
+		</span>
 	)
 
 }

@@ -24,7 +24,7 @@ const App = () => {
 			<FlashMessageContextFn.Provider value={flashMessageFn}>
 				<Header />
 				<Body />
-				<Footer />
+				{/*<Footer />*/}
 			</FlashMessageContextFn.Provider>
 		</FlashMessageContext.Provider>
 	)
@@ -38,12 +38,16 @@ $(document).ready(() => {
 	// 	document.getElementById('root').appendChild(document.createElement('div'))
 	// )
 
-	const rootElement = document.getElementById('root').appendChild(document.createElement('div'));
-	const root = createRoot(rootElement);
+	const rootElement = document.getElementById('root')
+	if (rootElement.childNodes.length === 0) {
+		rootElement.appendChild(document.createElement('div'));
+		const root = createRoot(rootElement);
 
-	root.render(
-		<App />
-	)
+		root.render(
+			<App />
+		)
+	}
+
 })
 
 // export const FlashMessageContext = createContext('test');

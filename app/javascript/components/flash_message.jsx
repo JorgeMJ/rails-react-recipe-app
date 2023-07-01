@@ -21,6 +21,7 @@ const FlashMessage = ({msn}) => {
 		const timer = setTimeout(function(){
 			setFlashMessage(null);
 			setPadding(0);
+			msn = null
 		}, 4000)
 
 		return () => clearTimeout(timer);

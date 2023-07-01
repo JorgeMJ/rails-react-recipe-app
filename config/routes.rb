@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get 'dashboard/get_recipes'
   get '/dashboard/add_sample_recipes'
   delete '/dashboard/delete_sample_recipes'
+
+  get '/registration/login'
+  get '/registration/signup'
 end
